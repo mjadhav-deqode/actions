@@ -9,4 +9,4 @@ jobs:
     - name: create directory
       run: |-
        mkdir -p ./artifacts/${{ github.repository }}
-       ls -al
+       ls -al ./artifacts/
