@@ -16,10 +16,9 @@ jobs:
         args: zip -r ./artifacts/${{ github.repository }}/${{ github.sha }}.zip ./src
 
     - name: Push Zip to S3
-      uses: jakejarvis/s3-sync-action@v0.3.1
-      env:
-        SOURCE_DIR: './artifacts'
-        AWS_REGION: 'us-east-1'
-        AWS_S3_BUCKET: 'my-bucket2q34w5et4hrgfds'
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      uses: shallwefootball/s3-upload-action@master
+      with:
+        aws_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws_bucket: 'my-bucket2q34w5et4hrgfds'
+        source_dir: './artifacts'
