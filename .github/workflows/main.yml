@@ -11,6 +11,7 @@ jobs:
       run: mkdir -p ./artifacts/
 
     - name: Create Zip
+      uses: actions/checkout@v2
       run: zip -r ./artifacts/code.zip ./
 
     # - name: Create Zip File
