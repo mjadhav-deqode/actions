@@ -13,13 +13,7 @@ jobs:
     - name: Create Zip
       run: |-
         ls -al && pwd
-        mkdir -p ./artifacts/
-        zip -r ./artifacts/code.zip ./
-
-    # - name: Create Zip File
-    #   uses: montudor/action-zip@v0.1.0
-    #   with:
-    #     args: zip -r ./artifacts/${{ github.sha }}.zip ./src
+        zip -r code.zip ./ -x ".git" ".github"
 
     - name: Push Zip to S3
       uses: shallwefootball/s3-upload-action@master
