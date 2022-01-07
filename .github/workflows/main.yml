@@ -13,7 +13,7 @@ jobs:
     - name: Create Zip
       run: |-
         ls -al && pwd
-        zip -r code.zip ./ -x ".git" ".github"
+        zip -r code.zip ./
 
     - name: Push Zip to S3
       uses: shallwefootball/s3-upload-action@master
