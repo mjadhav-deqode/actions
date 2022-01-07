@@ -7,15 +7,13 @@ jobs:
     runs-on: ubuntu-latest 
     steps:
 
-    - name: Make artifact directory
-      run: mkdir -p ./artifacts/
-
     - name: Checkout
       uses: actions/checkout@v2
 
     - name: Create Zip
       run: |-
         ls -al && pwd
+        mkdir -p ./artifacts/
         zip -r ./artifacts/code.zip ./
 
     # - name: Create Zip File
