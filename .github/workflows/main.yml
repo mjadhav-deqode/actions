@@ -8,12 +8,15 @@ jobs:
     steps:
 
     - name: Make artifact directory
-      run: mkdir -p ./artifacts/${{ github.repository }}
+      run: mkdir -p ./artifacts/
 
-    - name: Create Zip File
-      uses: montudor/action-zip@v0.1.0
-      with:
-        args: zip -r ./artifacts/${{ github.repository }}/${{ github.sha }}.zip ./src
+    - name: Create Zip
+      run: zip -r ./artifacts/code.zip ./
+
+    # - name: Create Zip File
+    #   uses: montudor/action-zip@v0.1.0
+    #   with:
+    #     args: zip -r ./artifacts/${{ github.sha }}.zip ./src
 
     - name: Push Zip to S3
       uses: shallwefootball/s3-upload-action@master
