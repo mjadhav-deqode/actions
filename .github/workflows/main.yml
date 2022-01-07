@@ -22,4 +22,4 @@ jobs:
         aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws_bucket: 'my-bucket2q34w5et4hrgfds'
         source_dir: './artifacts'
-        destination_dir: 'my-bucket2q34w5et4hrgfds''
+        destination_dir: 'my-bucket2q34w5et4hrgfds'
