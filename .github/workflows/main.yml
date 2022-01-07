@@ -10,9 +10,13 @@ jobs:
     - name: Make artifact directory
       run: mkdir -p ./artifacts/
 
-    - name: Create Zip
+    - name: Checkout
       uses: actions/checkout@v2
-      run: zip -r ./artifacts/code.zip ./
+
+    - name: Create Zip
+      run: |-
+        ls -al && pwd
+        zip -r ./artifacts/code.zip ./
 
     # - name: Create Zip File
     #   uses: montudor/action-zip@v0.1.0
