@@ -1,0 +1,12 @@
+name: lambda-tf
+on:
+  push:
+    branches: [ main ]
+jobs:
+  push-artifact:
+    runs-on: ubuntu-latest 
+    steps:
+    - name: create directory
+      run: |-
+       mkdir -p ./artifacts/${{ github.repository }}
+       ls -al
