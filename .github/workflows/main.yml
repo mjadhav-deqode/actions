@@ -31,5 +31,5 @@ jobs:
         aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws_region: "us-east-1"
         function_name: My_Lambda_function
-        zip_file: s3://my-github-actions-bucket/lambda/code.zip
-        dry_run: true
+        zip_file: s3://jan10-bucket-2022/lambda/code.zip
+        source: lambda/index.py
