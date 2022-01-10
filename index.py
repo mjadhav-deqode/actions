@@ -1,4 +1,4 @@
-#jan10 2022
+#check source
 def lambda_handler(event, context):
     message = 'Hello {} {}!'.format(event['first_name'], event['last_name'])  
     return { 
